@@ -1,58 +1,64 @@
-# 🏦 FinGPT
-**Where finance meets AI**
+# 🤖 Entropix
+**An Open-Source Conversational AI Inspired by Perplexity AI**
 
-*Disclaimer: LLMs can hallucinate; this is not financial advice.*
+*Disclaimer: Entropix's responses are for informational and educational purposes only.*
+
+---
 
 ## Overview
-FinGPT is an AI-powered tool that makes stock recommendations based on live data from Google Finance. It leverages advanced language models, specifically the **Meta-Llama/Meta-Llama-3.1-405B-Instruct model** via **Nebius AI Studio**, to analyze financial data and generate tailored insights.
+Entropix is an open-source conversational AI tool inspired by **Perplexity AI**, the innovative AI-powered search startup. Entropix combines advanced search capabilities with the power of large language models to deliver contextually relevant, cited responses to user questions. Built with the **Llama-3.1-405B model** from **[Nebius AI Studio](https://nebius.com/studio/inference?utm_medium=cpc&utm_source=chesscompetition&utm_campaign=Network_en_all_lgen_inference_cloud&utm_term=chesscompetition)**, Entropix is designed for accurate, dynamic, and interactive information retrieval.
 
-Nebius AI Studio provides the AI infrastructure that powers FinGPT, allowing it to deliver reliable, up-to-date financial insights with robust processing capabilities. FinGPT is designed to assist with initial research and provide valuable information, but it should be used as part of a broader investment strategy.
+Entropix is a great starting point for exploring the possibilities of conversational search engines, with a focus on transparency, adaptability, and open-source development.
+
+---
+
+## How It Works
+1. **User Interaction**: Users submit questions through a simple chat interface. Entropix maintains conversation context, allowing for seamless dialogue.
+
+2. **Generating Search Queries**: Based on the user’s question, Entropix generates tailored search terms for relevant, up-to-date results, using today’s date to prioritize recent information.
+
+3. **Data Retrieval**: Entropix leverages **SerpApi** to search Google News with generated queries, retrieving the latest articles, links, summaries, and images in JSON format.
+
+4. **Data Interpretation**: The **Llama-3.1-405B model** interprets the collected information and crafts a clear response in Markdown, providing inline citations for easy verification. The response is streamed to users in real time for a smooth conversational experience.
 
 ---
 
 ## Features
-- **Live Stock Data**: Get up-to-date information on stock prices, market movements, and key financial indicators from Google Finance.
-- **AI-Powered Analysis**: FinGPT uses Nebius AI Studio's infrastructure to harness the capabilities of the Meta-Llama model for detailed and contextually aware financial analysis.
-- **Stock Recommendations**: Generate insights and recommendations based on the latest market data.
-- **Multi-Category Analysis**: FinGPT offers information on markets, currencies, crypto, futures, and more, enhancing your financial research.
+- **Inspired by Perplexity AI**: Entropix aims to replicate the conversational, cited-response style of Perplexity AI, delivering information backed by sources.
+- **Advanced Search Functionality**: Entropix performs web searches using custom queries, ensuring that responses are accurate and contextually relevant.
+- **Powered by Nebius AI Studio**: The integration of Llama-3.1-405B from Nebius AI Studio provides Entropix with high-quality natural language understanding.
+- **Streaming Responses**: Entropix streams its responses in real-time, giving users quick feedback as the AI processes their questions.
+- **Inline Citations**: All sources are provided directly in responses to maintain transparency and allow for verification.
 
 ---
 
 ## FAQ
 
-### What is FinGPT?
-FinGPT is a financial AI tool that provides stock recommendations by analyzing real-time data from Google Finance. It uses **Meta-Llama/Meta-Llama-3.1-405B-Instruct** via **Nebius AI Studio**, which enables it to interpret financial data and deliver meaningful insights based on user queries.
+### What is Entropix?
+Entropix is an open-source conversational AI tool inspired by **Perplexity AI**. It combines search engine capabilities with advanced language modeling to answer user questions with cited responses, making it a useful tool for real-time information retrieval and educational purposes.
 
-### How does FinGPT work?
-When you input a query, FinGPT retrieves relevant data from Google Finance, processes it using the Meta-Llama model, and provides a recommendation or insight. It performs a semantic search to identify the most relevant information and interprets this data to deliver accurate, contextually appropriate answers.
+### How does Entropix work?
+Entropix transforms user questions into search queries for Google News, retrieves relevant information using SerpApi, and interprets the results with Llama-3.1-405B from Nebius AI Studio. The tool then generates a response that includes source citations, so users can verify the information.
 
-### Are FinGPT’s stock recommendations 100% accurate?
-No, AI models like Meta-Llama are sophisticated but can sometimes make mistakes or overlook context. Recommendations are based on the data available at the time of the query and may not account for real-time market shifts or complex financial events. FinGPT’s insights should be treated as one part of a comprehensive investment strategy.
-
-### Can I rely on FinGPT’s recommendations for investment decisions?
-FinGPT is an informative tool designed to support your research. However, it is advised to use these insights as part of a broader research process. For significant financial decisions, always verify FinGPT’s suggestions with additional sources or consult a financial advisor.
-
----
-
-## Usage Example
-When asked, *"Analyze Tesla for me,"* FinGPT might return the following:
-
-**Tesla, Inc. (TSLA)**:
-- Listed on the NASDAQ under the ticker symbol TSLA.
-- Current stock price: **$319.62**, down **3.22%** from the previous day and up **78.3%** over the past year.
-- Key Financials: Gross profit of **$16,442 million** and net income of **$14,823 million** in 2023, with a price per share of **$207.81**.
-- Recent Developments: Tesla’s expansion into Indonesia with plans for an EV factory, anticipated India relaunch, and the launch of the Cybertruck.
-- Considerations: Tesla faces potential headwinds including production challenges at its German factory, regulatory scrutiny, and a possible dip in demand.
+### Is Entropix always accurate?
+Entropix aims to provide precise and relevant answers, but it may occasionally produce incomplete or incorrect information. It is intended as a research tool, so critical information should be verified with additional trusted sources.
 
 ---
 
 ## Getting Started
-To get started with FinGPT:
-1. **Install Requirements**: FinGPT requires access to the Nebius AI Studio API for model functionality.
-2. **Set Up API Keys**: Add your API keys for Nebius AI Studio and Google Finance data in the environment file (`.env`).
-3. **Run the App**: Execute the app in Streamlit to begin querying FinGPT for insights.
+1. **Install Requirements**: Make sure you have `Streamlit`, `pydantic`, `SerpApi`, and other necessary dependencies installed.
+2. **Set Up API Keys**: Add your `NEBIUS_API_KEY` and `SERPAPI_API_KEY` to an `.env` file for secure access.
+3. **Run the App**: Launch the app in Streamlit with the command `streamlit run <script_name>.py` to start using Entropix.
+
+---
+
+## Example Usage
+If you ask a question like, *“What’s the latest on climate change?”*, Entropix will:
+1. Generate search terms to retrieve recent Google News articles on climate change.
+2. Retrieve and interpret the data using Llama-3.1-405B.
+3. Present a summarized response with sources for easy verification.
 
 ---
 
 ## Disclaimer
-FinGPT’s stock recommendations are generated by AI and should be used for informational purposes only. This tool is not a substitute for professional financial advice, and users should verify insights before making any investment decisions.
+Entropix's responses are generated by AI for general information purposes. Users should verify insights and consult authoritative sources for critical information.
